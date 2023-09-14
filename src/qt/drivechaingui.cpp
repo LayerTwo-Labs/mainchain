@@ -4,6 +4,7 @@
 
 #include <qt/drivechaingui.h>
 
+#include <qt/bitdrivedialog.h>
 #include <qt/blockexplorer.h>
 #include <qt/clientmodel.h>
 #include <qt/createwalletdialog.h>
@@ -216,6 +217,9 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
 
         denialDialog = new DenialDialog(platformStyle);
         denialDialog->setParent(this, Qt::Window);
+
+        bitDriveDialog = new BitDriveDialog(platformStyle);
+        bitDriveDialog->setParent(this, Qt::Window);
 
         multisigLoungeDialog = new MultisigLoungeDialog(platformStyle);
         multisigLoungeDialog->setParent(this, Qt::Window);
@@ -513,9 +517,9 @@ void BitcoinGUI::createActions()
     showTimestampDialogAction->setStatusTip(tr("Show unforgeable timestamps window"));
     showTimestampDialogAction->setEnabled(false);
 
-    showStorageDialogAction = new QAction(platformStyle->TextColorIcon(":/icons/safe"), tr("&Permanent Encrypted File Backup"), this);
+    showStorageDialogAction = new QAction(platformStyle->TextColorIcon(":/icons/safe"), tr("&Permanent Encrypted File Backup (BitDrive)"), this);
     showStorageDialogAction->setStatusTip(tr("Show undeletable data storage window"));
-    showStorageDialogAction->setEnabled(false);
+    showStorageDialogAction->setEnabled(true);
 
     showCoinNewsDialogAction = new QAction(platformStyle->TextColorIcon(":/icons/broadcastnews"), tr("&Broadcast CoinNews"), this);
     showCoinNewsDialogAction->setStatusTip(tr("Show coin news window"));
@@ -1105,7 +1109,7 @@ void BitcoinGUI::showTimestampDialog()
 
 void BitcoinGUI::showStorageDialog()
 {
-
+    bitDriveDialog->show();
 }
 
 void BitcoinGUI::showCoinNewsDialog()

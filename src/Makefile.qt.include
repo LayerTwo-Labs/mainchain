@@ -97,6 +97,7 @@ QT_TS = \
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
   qt/forms/askpassphrasedialog.ui \
+  qt/forms/bitdrivedialog.ui \
   qt/forms/blockexplorer.ui \
   qt/forms/blockindexdetailsdialog.ui \
   qt/forms/coincontroldialog.ui \
@@ -150,6 +151,7 @@ QT_MOC_CPP = \
   qt/moc_addresstablemodel.cpp \
   qt/moc_askpassphrasedialog.cpp \
   qt/moc_bantablemodel.cpp \
+  qt/moc_bitdrivedialog.cpp \
   qt/moc_blockexplorer.cpp \
   qt/moc_blockexplorertablemodel.cpp \
   qt/moc_blockindexdetailsdialog.cpp \
@@ -261,6 +263,7 @@ DRIVECHAIN_QT_H = \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
   qt/bantablemodel.h \
+  qt/bitdrivedialog.h \
   qt/blockexplorer.h \
   qt/blockexplorertablemodel.h \
   qt/blockindexdetailsdialog.h \
@@ -519,6 +522,7 @@ DRIVECHAIN_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
+  qt/bitdrivedialog.cpp \
   qt/blockexplorer.cpp \
   qt/blockexplorertablemodel.cpp \
   qt/blockindexdetailsdialog.cpp \

@@ -42,6 +42,7 @@ class HashCalcDialog;
 class BlockExplorer;
 class CreateWalletDialog;
 class DenialDialog;
+class BitDriveDialog;
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -179,6 +180,8 @@ private:
     BlockExplorer *blockExplorerDialog;
     /** Denial dialog */
     DenialDialog *denialDialog;
+    /** BitDrive dialog */
+    BitDriveDialog *bitDriveDialog;
     /** Multisig Lounge dialog */
     MultisigLoungeDialog *multisigLoungeDialog;
     /** Proof of Funds dialog */

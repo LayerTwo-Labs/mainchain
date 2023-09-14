@@ -393,7 +393,6 @@ void OverviewPage::showGraffitiDialog()
 void OverviewPage::showCoinNewsDialog()
 {
     createNewsDialog->show();
-
 }
 
 void OverviewPage::on_tableViewBlocks_doubleClicked(const QModelIndex& index)
