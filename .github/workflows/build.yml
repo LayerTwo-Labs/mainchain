@@ -144,3 +144,23 @@ jobs:
             src/drivechaind
             src/drivechain-cli
             src/qt/drivechain-qt
+
+  upload-artifacts-to-releases-drivechain-info:
+    name: Upload artifacts to releases.drivechain.info
+    runs-on: ubuntu-latest
+    needs: [build-linux, build-macos, build-windows]
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Upload artifacts to releases.drivechain.info
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: 45.33.96.47
+          user: root
+          pass: ${{ secrets.RELEASES_SERVER_PW }}
+          port: 22
+          scp: |
+            'mainchain-*-x86_64-apple-darwin11' => '/var/www/html/L1-Mainchain-latest-x86_64-apple-darwin'
+            'mainchain-*-x86_64-w64-mingw32' => '/var/www/html/L1-Mainchain-latest-x86_64-w64-mingw32'
+            'mainchain-*-x86_64-unknown-linux-gnu' => '/var/www/html/L1-Mainchain-latest-x86_64-unknown-linux-gnu'
