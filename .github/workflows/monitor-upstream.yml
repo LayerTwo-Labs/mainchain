@@ -1,0 +1,19 @@
+name: Monitor Bitcoin Core Upstream Branch
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at 00:00
+  workflow_dispatch:
+
+jobs:
+  check-bitcoin-core:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Attempt rebase on Bitcoin Core master
+        run: |
+          git remote add bitcoin-core https://github.com/bitcoin/bitcoin.git
+          git fetch bitcoin-core master
+          git rebase bitcoin-core/master 
